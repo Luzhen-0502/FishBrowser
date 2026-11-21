@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>FishBrowser</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="chrome">
+    <div class="nav-group">
+      <button id="btn-back" class="icon-btn" title="后退">‹</button>
+      <button id="btn-forward" class="icon-btn" title="前进">›</button>
+      <button id="btn-reload" class="icon-btn" title="刷新">⟳</button>
+      <button id="btn-home" class="icon-btn" title="主页">⌂</button>
+    </div>
+
+    <div class="addr-wrap">
+      <span id="scheme" class="scheme">🔒</span>
+      <input id="addr" type="text" spellcheck="false" autocomplete="off"
+             placeholder="输入网址或搜索内容，回车打开" />
+    </div>
+
+    <div class="stat-wrap" title="已拦截的广告/追踪请求">
+      <span class="shield">🛡</span>
+      <span id="blocked">0</span>
+    </div>
+  </div>
+
+  <div id="progress"></div>
+
+  <div id="viewport">
+    <webview id="view" src="https://cn.bing.com" allowpopups></webview>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

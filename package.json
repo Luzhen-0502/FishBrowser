@@ -1,0 +1,44 @@
+{
+  "name": "fishbrowser",
+  "version": "1.0.0",
+  "description": "FishBrowser - 纯净无广告浏览器（Electron + 内置广告/追踪拦截）",
+  "main": "main.js",
+  "author": "Luzhen-0502",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.luzhen.fishbrowser",
+    "productName": "FishBrowser",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "ui/**/*",
+      "package.json"
+    ],
+    "win": {
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "FishBrowser-${version}-portable.exe"
+    },
+    "compression": "maximum"
+  }
+}
